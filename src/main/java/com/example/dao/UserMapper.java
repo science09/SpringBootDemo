@@ -1,5 +1,6 @@
-package com.example;
+package com.example.dao;
 
+import com.example.data.User;
 import org.apache.ibatis.annotations.*;
 
 /**

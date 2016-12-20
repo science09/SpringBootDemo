@@ -1,6 +1,4 @@
-package com.example;
-
-import java.util.Random;
+package com.example.data;
 
 /**
  * Created by hadoop on 16-12-11.

@@ -1,10 +1,11 @@
-package com.example;
+package com.example.data;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by hadoop on 16-12-11.
+ * Result
  */
 public class Result {
     public List<TestData> data;

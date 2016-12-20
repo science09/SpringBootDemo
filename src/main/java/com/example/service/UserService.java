@@ -1,4 +1,4 @@
-package com.example;
+package com.example.service;
 
 /**
  * Created by hadoop on 16-12-2.

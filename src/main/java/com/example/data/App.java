@@ -1,8 +1,6 @@
-package com.example;
+package com.example.data;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 /**
  * Created by hadoop on 16-12-2.

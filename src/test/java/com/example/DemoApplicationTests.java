@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.controller.HelloController;
+import com.example.dao.UserMapper;
+import com.example.data.AppProperty;
+import com.example.data.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

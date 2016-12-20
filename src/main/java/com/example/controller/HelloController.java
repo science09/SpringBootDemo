@@ -1,5 +1,8 @@
-package com.example;
+package com.example.controller;
 
+import com.example.data.AppProperty;
+import com.example.data.Result;
+import com.example.data.TestData;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

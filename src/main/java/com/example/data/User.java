@@ -1,4 +1,4 @@
-package com.example;
+package com.example.data;
 
 /**
  * Created by hadoop on 16-12-1.
@@ -9,7 +9,7 @@ public class User {
     private String name;
     private Integer age;
 
-    User(Integer id, String name, Integer age) {
+    public User(Integer id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;

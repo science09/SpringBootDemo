@@ -1,4 +1,4 @@
-package com.example;
+package com.example.data;
 
 /**
  * Created by hadoop on 16-12-3.
