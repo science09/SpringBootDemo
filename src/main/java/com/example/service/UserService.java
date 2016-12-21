@@ -1,29 +1,29 @@
 package com.example.service;
 
+import com.example.dao.UserMapper;
+import com.example.data.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
 /**
- * Created by hadoop on 16-12-2.
- * UserService
+ * Created by hadoop on 16-12-21.
  */
-public interface UserService {
+@Service
+public class UserService implements UserDetailsService {
 
-    /**
-     * 新增一个用户
-     * @param name
-     * @param age
-     */
-    void create(String name, Integer age);
-    /**
-     * 根据name删除一个用户高
-     * @param name
-     */
-    void deleteByName(String name);
-    /**
-     * 获取用户总量
-     */
-    Integer getAllUsers();
-    /**
-     * 删除所有用户
-     */
-    void deleteAllUsers();
+    @Autowired
+    private UserMapper userMapper;
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userMapper.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException(String.format("User with username=%s was not found", username));
+        }
+
+        return user;
+    }
 }

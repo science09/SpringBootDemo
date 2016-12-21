@@ -27,7 +27,7 @@ public class DemoApplicationTests {
 	@Autowired
 	private AppProperty appProperty;
 //	@Autowired
-//	private UserService userService;
+//	private IUserService userService;
 	@Autowired
 	private UserMapper userMapper;
 
@@ -42,9 +42,9 @@ public class DemoApplicationTests {
 	@Rollback
 	public void findByName() throws Exception {
 		userMapper.clear();
-		userMapper.insert("Moon", 12);
-		User u = userMapper.findByName("Moon");
-		Assert.assertEquals(12, u.getAge().intValue());
+		userMapper.insert("Moon1", "123456");
+		User u = userMapper.findByUsername("Moon1");
+		Assert.assertEquals("123456", u.getPassword());
 	}
 
 //	public void test() throws Exception {

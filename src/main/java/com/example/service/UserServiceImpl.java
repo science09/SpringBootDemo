@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * Created by hadoop on 16-12-2.
  * UserServiceImpl
  */
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

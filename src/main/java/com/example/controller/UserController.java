@@ -15,8 +15,8 @@ public class UserController {
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<>());
 
     static {
-        User mUser1 = new User(1, "Lily", 16);
-        User mUser2 = new User(2, "Kevin", 18);
+        User mUser1 = new User(1, "Lily", "12345");
+        User mUser2 = new User(2, "Kevin", "23456");
         users.put(1L, mUser1);
         users.put(2L, mUser2);
     }
@@ -46,8 +46,8 @@ public class UserController {
     public String putUser(@PathVariable Long id, @ModelAttribute User user) {
         // 处理"/users/{id}"的PUT请求，用来更新User信息
         User u = users.get(id);
-        u.setName(user.getName());
-        u.setAge(user.getAge());
+        u.setUsername(user.getUsername());
+        u.setPassword(user.getPassword());
         users.put(id, u);
         return "success";
     }
