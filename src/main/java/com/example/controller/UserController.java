@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.data.User;
+import com.example.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;

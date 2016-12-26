@@ -2,8 +2,9 @@ package com.example;
 
 import com.example.controller.HelloController;
 import com.example.dao.UserMapper;
-import com.example.data.AppProperty;
-import com.example.data.User;
+import com.example.entity.AppProperty;
+import com.example.entity.User;
+import com.example.service.UserService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +32,9 @@ public class DemoApplicationTests {
 	@Autowired
 	private UserMapper userMapper;
 
+	@Autowired
+	private UserService userService;
+
 
 	@Before
 	public void setUp() throws Exception {
@@ -43,8 +47,15 @@ public class DemoApplicationTests {
 	public void findByName() throws Exception {
 		userMapper.clear();
 		userMapper.insert("Moon1", "123456");
-		User u = userMapper.findByUsername("Moon1");
+		userMapper.insert("admin", "admin");
+		User u = userMapper.selectByUsername("Moon1");
 		Assert.assertEquals("123456", u.getPassword());
+	}
+
+	@Test
+	public void findName() throws Exception {
+		User user = (User) userService.loadUserByUsername("admin");
+		Assert.assertEquals("admin", user.getPassword());
 	}
 
 //	public void test() throws Exception {

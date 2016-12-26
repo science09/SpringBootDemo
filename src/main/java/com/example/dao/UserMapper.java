@@ -1,21 +1,25 @@
 package com.example.dao;
 
-import com.example.data.User;
+import com.example.entity.User;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by hadoop on 16-12-2.
+ * UserMapper mybatis的Mapper配置
  */
+@Service
 @Mapper
-@Component
 public interface UserMapper {
 
+//    User selectById(String id);
+//    User selectByUsername(String username);
+
     @Select("SELECT * FROM User WHERE id = #{id}")
-    User findtById(@Param("id") Integer id);
+    User selectById(@Param("id") Integer id);
 
     @Select("SELECT * FROM User WHERE username = #{username}")
-    User findByUsername(@Param("username") String username);
+    User selectByUsername(@Param("username") String username);
 
     @Insert("INSERT INTO User(username, password, role) VALUES(#{username}, #{password}, #{role})")
     int insertUser(@Param("username") String username,
