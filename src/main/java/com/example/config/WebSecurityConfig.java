@@ -1,4 +1,4 @@
-package com.example;
+package com.example.config;
 
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login");
         //关闭csrf 防止循环定向
         http.csrf().disable();
+
     }
 
     @Autowired

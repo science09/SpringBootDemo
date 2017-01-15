@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.entity.User;
+import com.example.entity.UserInfo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,8 @@ public interface UserMapper {
     @Delete("DELETE FROM User")
     void clear();
 
+
+    @Select("SELECT * FROM UserInfo WHERE username = #{username}")
+    UserInfo selectUserInfoByName(@Param("username") String username);
 }
 

@@ -1,4 +1,4 @@
-package com.example;
+package com.example.config;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.ControllerAdvice;
